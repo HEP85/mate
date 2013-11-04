@@ -1,34 +1,45 @@
 <!doctype html>
-<html lang="en" ng-app="mateApp">
+<html ng-app="app">
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
+  <title>Mate</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-<body ng-controller="UserListCtrl">
-  <ul class="nav nav-pills">
-    <li class="active"><a href="#">Mate</a></li>
-    <li><a href="#">Users</a></li>
-    <li><a href="#">Stats</a></li>
-    <li><a href="#">Audit</a></li>
-    <li><a href="#">Drinks</a></li>
-  </ul>
-
-  <div class="row">
-    <div class="col-md-2" ng-repeat="user in users">
-      <a href="#"><div class="thumbnail">
-        <span class="badge">{{user.name}}</span><br />
-        <img src="{{user.avatar}}" width="80" height="80" alt="Avatar" class="img-thumbnail">
-      </a></div>
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Mate</a>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2"><button type="button" class="btn btn-primary">New</button></div>
-  </div>
-
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="users">Users</a></li>
+        <li><a href="stats">Stats</a></li>
+        <li><a href="audit">Audit</a></li>
+        <li><a href="products">Products</a></li>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div ng-view></div>
 </body>
 </html>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-2" ng-repeat="user in users">
+    <a href="#"><div class="thumbnail">
+      <span class="badge">{{user.name}}</span><br />
+      <img src="{{user.avatar}}" width="80" height="80" alt="Avatar" class="img-thumbnail">
+    </a></div>
+  </div>
+  <div class="col-md-2"><button type="button" class="btn btn-primary">New</button></div>
+</div>
+<h1>{{$location.path()}}</h1>
