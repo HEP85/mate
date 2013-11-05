@@ -1,10 +1,7 @@
 var appControllers = angular.module('appControllers', []);
 
-appControllers.controller('UserListCtrl', ['$scope', '$http', '$location',
-  function UserListCtrl($scope, $http, $location) {
+appControllers.controller('UserListCtrl', ['$scope', '$location', 'User',
+  function UserListCtrl($scope, $location, User) {
   $scope.$location = $location; // DEBUG??
-  $http.get('/api/users').
-    success(function(data) {
-      $scope.users = data.users;
-    });
+  $scope.users = User.query();
 }]);

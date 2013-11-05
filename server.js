@@ -18,7 +18,7 @@ app.get(/^\/(js|css|img|partials)\/(.+)$/, function(req, res) {
 
 // API (REST, JSON)
 app.get('/api/users', function(req, res) {
-  res.json({users: [
+  res.json([
     {'name': 'Count Zero',
      'avatar': 'img/default_avatar.png'},
     {'name': 'doc',
@@ -35,7 +35,7 @@ app.get('/api/users', function(req, res) {
      'avatar': 'img/default_avatar.png'},
     {'name': 'vileda',
      'avatar': 'img/default_avatar.png'}
-  ]});
+  ]);
 });
 
 // Catch-all route (redirect to index)
